@@ -4,7 +4,7 @@ config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 vars:
-  transformations:
+  hubspot:
     contact: "{{ ref('stg_hubspot__contact') }}"
     contact_merge_audit: "{{ ref('stg_hubspot__contact_merge_audit') }}"
     contact_list: "{{ ref('stg_hubspot__contact_list') }}"
@@ -54,9 +54,9 @@ vars:
     hubspot_contact_merge_audit_enabled: false
 
 models:
-  transformations:
+  hubspot:
     +materialized: table
-    +schema: transformations
+    +schema: hubspot
     marketing:
       intermediate:
         +materialized: ephemeral
