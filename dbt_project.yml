@@ -4,7 +4,7 @@ config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 vars:
-  hubspot:
+  transformations:
     contact: "{{ ref('stg_hubspot__contact') }}"
     contact_merge_audit: "{{ ref('stg_hubspot__contact_merge_audit') }}"
     contact_list: "{{ ref('stg_hubspot__contact_list') }}"
@@ -50,13 +50,13 @@ vars:
 
     email_metrics: ['bounces', 'clicks', 'deferrals', 'deliveries', 'drops', 'forwards', 'opens', 'prints', 'spam_reports', 'unsubscribes']
 
-  #Contact Merge Audit Enable Variable
-  hubspot_contact_merge_audit_enabled: false
+    #Contact Merge Audit Enable Variable
+    hubspot_contact_merge_audit_enabled: false
 
 models:
-  hubspot:
+  transformations:
     +materialized: table
-    +schema: hubspot
+    +schema: transformations
     marketing:
       intermediate:
         +materialized: ephemeral
