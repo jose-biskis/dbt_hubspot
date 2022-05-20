@@ -3,7 +3,6 @@ jobs:
 # Job names must be unique.
  - name: daily
    schedule: '*/15 * * * *'
-   timeout: 2h30m
    steps:
      - name: run deps # Give each step in your job a name. This will enable you to track the steps in the logs.
        command: dbt deps
