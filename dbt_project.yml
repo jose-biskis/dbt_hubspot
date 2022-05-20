@@ -14,6 +14,7 @@ models:
       intermediate:
         +materialized: ephemeral
 vars:
+  hubspot_contact_list_enabled: false
   hubspot_email_event_status_change_enabled: false
   hubspot_contact_list_member_enabled: false
   hubspot_email_event_spam_report_enabled: false
